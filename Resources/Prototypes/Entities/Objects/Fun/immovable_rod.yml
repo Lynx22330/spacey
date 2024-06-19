@@ -42,6 +42,17 @@
     lifetime: 30.0
 
 - type: entity
+  id: ImmovableRodLynxEditDespawn
+  suffix: Despawn
+  parent: ImmovableRod
+  components:
+  - type: TimedDespawn
+    lifetime: 0.01
+  - type: ImmovableRod
+    minSpeed: 1
+    maxSpeed: 2
+
+- type: entity
   id: ImmovableRodSlow
   parent: ImmovableRodDespawn
   suffix: Slow

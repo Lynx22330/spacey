@@ -1,0 +1,19 @@
+# This is an attempt to get a destroyed version of a full station map ported to the dungen packs.
+# To make this work I need to set the size to something large that fits station dimensions.
+# THESE SHOULD NEVER INCLUDE ANY OFFSET DESTRUCTION, I.E. Unconnected grids / debri flung around, everything should orient southward.
+
+# Using 100,100 x and y dimensions to generate over 1000 tiles inside of one large square.
+# This is where the base area is defined, as in, maps will generate within these tiles provided. Must have a 'preset' that fits within the bounds. For example,
+# anything that is under 20x20 can work in StationArea0, yet anything over 20x20 will not work. The generator will pick the largest tileset to use within
+# the preset during dungeon generation.
+- type: dungeonRoomPack
+  id: StationArea0
+  size: 20,20
+  rooms:
+    - 0,0,20,20 # 20x20
+
+- type: dungeonRoomPack
+  id: StationArea1
+  size: 6,9
+  rooms:
+    - 0,0,6,9

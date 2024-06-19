@@ -607,6 +607,41 @@
     sprite: Structures/Walls/reinforced_diagonal.rsi
     state: state0
 
+# Start of making a wall 'cap' for the ends of ... poles or something. Struts?
+- type: entity
+  parent: WallReinforced
+  id: WallReinforcedCap
+  name: reinforced wall
+  suffix: cap
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wall
+  components:
+  - type: Sprite
+    drawdepth: Walls
+    sprite: Structures/Walls/reinforced_cap.rsi
+    state: state0
+  - type: IconSmooth
+    mode: NoSprite
+    key: walls
+    base: state
+  - type: Icon
+    sprite: Structures/Walls/reinforced_cap.rsi
+    state: state0
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PolygonShape
+            vertices:
+            - "-0.5,-0.5"   # Bottom Left
+            - "-0.5,0.1"    # Middle Left
+            - "0.5,-0.5"    # Bottom Right
+            - "0.5,0.1"     # Middle Right
+            - "-0.15,0.45"  # Top Left
+            - "0.15,0.45"   # Top right
+
 # Riveting
 - type: entity
   parent: BaseWall

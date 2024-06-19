@@ -11,6 +11,7 @@
       prototypes:
         - Grille
         - GrilleBroken
+        - GrilleDiagonal # Absolute beauty...
       chance: 1.0
   placement:
     mode: AlignTileAny

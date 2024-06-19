@@ -166,6 +166,9 @@ public sealed partial class DungeonJob : Job<Dungeon>
                 case WormCorridorPostGen worm:
                     await PostGen(worm, dungeon, _gridUid, _grid, random);
                     break;
+                case WormCorridorLynxEditPostGen worm:
+                    await PostGen(worm, dungeon, _gridUid, _grid, random);
+                    break;
                 default:
                     throw new NotImplementedException();
             }
