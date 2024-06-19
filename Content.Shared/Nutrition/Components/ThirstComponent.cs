@@ -1,4 +1,5 @@
 using Content.Shared.Alert;
+using Content.Shared.Damage;
 using Content.Shared.Nutrition.EntitySystems;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
@@ -38,6 +39,12 @@ public sealed partial class ThirstComponent : Component
     [AutoNetworkedField]
     [AutoPausedField]
     public TimeSpan NextUpdateTime;
+
+    /// <summary>
+    /// Damage dealt when your current threshold is at ThirstThreshold.Dead
+    /// </summary>
+    [DataField("thirstDamage")]
+    public DamageSpecifier? ThirstDamage;
 
     /// <summary>
     /// The time between each update.

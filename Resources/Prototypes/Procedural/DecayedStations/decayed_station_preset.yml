@@ -1,0 +1,11 @@
+# This is an attempt to get a destroyed version of a full station map ported to the dungen packs.
+# To make this work I need to set the size to something large that fits station dimensions.
+# THESE SHOULD NEVER INCLUDE ANY OFFSET DESTRUCTION, I.E. Unconnected grids / debri flung around, everything should orient southward.
+
+# Set to 100 to fit the station preset inside.
+# This is where the presets are defined, the areas that can be used within the 'pack'.
+- type: dungeonPreset
+  id: DecayedStationPreset
+  roomPacks:
+    - 0,0,20,20 # 40x40
+    - 21,0,27,9

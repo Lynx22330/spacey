@@ -111,13 +111,26 @@ namespace Content.Client.HealthAnalyzer.UI
 
             if (_entityManager.TryGetComponent(target, out HungerComponent? hunger)
                 && hunger.StarvationDamage != null
-                && hunger.CurrentThreshold <= HungerThreshold.Starving)
+                && hunger.CurrentThreshold <= HungerThreshold.Dead)
             {
                 var box = new Control { Margin = new Thickness(0, 0, 0, 15) };
 
                 box.AddChild(CreateDiagnosticGroupTitle(
                     Loc.GetString("health-analyzer-window-malnutrition"),
                     "malnutrition"));
+
+                GroupsContainer.AddChild(box);
+            }
+
+            if (_entityManager.TryGetComponent(target, out ThirstComponent? thirst)
+                && thirst.ThirstDamage != null
+                && thirst.CurrentThirstThreshold <= ThirstThreshold.Dead)
+            {
+                var box = new Control { Margin = new Thickness(0, 0, 0, 15) };
+
+                box.AddChild(CreateDiagnosticGroupTitle(
+                    Loc.GetString("health-analyzer-window-dehydration"),
+                    "dehydration"));
 
                 GroupsContainer.AddChild(box);
             }

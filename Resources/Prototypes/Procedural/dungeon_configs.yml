@@ -359,3 +359,30 @@
     - !type:BoundaryWallPostGen
       tile: FloorCaveDrought
       wall: WallRock
+
+- type: dungeonConfig
+  id: StationDecay
+  generator: !type:PrefabDunGen
+    tile: Space
+    roomWhitelist:
+    - DecayedStation
+    presets:
+    - DecayedStationPreset
+  postGeneration:
+    - !type:WormCorridorLynxEditPostGen #Works flawlessly for simulated destruction.
+      width: 1
+      length: 5
+      count: 2
+      tile: Lattice
+
+    - !type:CorridorClutterPostGen
+      chance: 0.8
+      contents:
+      - id: ImmovableRodLynxEditDespawn
+        prob: 0.8
+      - id: GrilleSpawner
+        prob: 0.2
+
+    - !type:BoundaryWallPostGen
+      tile: Space  #Keeping this for debugging currently. FloorCaveDrought
+      wall: WallInvisible

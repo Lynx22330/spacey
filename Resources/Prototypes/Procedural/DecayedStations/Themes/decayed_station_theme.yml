@@ -1,0 +1,23 @@
+# This is where you define the room "areas" within the map itself. Meaning if you wanted this to be used, you need to first define
+# an area, then a preset, then a pack that can use the preset, which can then use the area defined here.
+# When creating a new map follow this guide, Area comes first (This .yml), a Preset size that can use the given areas,
+# then a Pack that is big enough to fit the presets that are set.
+# For even more clarity... You can have 20 Areas, with 4 preset sizes that can be used inside of a Pack that can contain 2 or more zones to generate inside of.
+#
+# ... anyways, moving on! - Lynx
+
+- type: dungeonRoom
+  id: StationPartTest20x20a
+  size: 20,20
+  atlas: /Maps/Dungeon/decayedstation/TestDecay.yml
+  offset: 0,0
+  tags:
+    - DecayedStation
+
+- type: dungeonRoom
+  id: StationPartTest6x9a #Angry Xeno SPAWN TEST!
+  size: 9,6
+  atlas: /Maps/Dungeon/decayedstation/TestDecay.yml
+  offset: 22,0
+  tags:
+    - DecayedStation

@@ -148,10 +148,16 @@
 
 - type: entity
   name: makeshift laser pistol
-  parent: BaseWeaponBatterySmall
+  parent: [BaseWeaponBatterySmall, BaseGunWieldable]
   id: WeaponMakeshiftLaser
   description: Better pray it won't burn your hands off.
   components:
+  - type: Gun
+    fireRate: 100
+    selectedMode: Burst
+    availableModes:
+    - Burst
+    shotsPerBurst: 6
   - type: Sprite
     sprite: Objects/Weapons/Guns/Battery/makeshift.rsi
     layers:
@@ -163,11 +169,11 @@
   - type: Clothing
     sprite: Objects/Weapons/Guns/Battery/makeshift.rsi
   - type: HitscanBatteryAmmoProvider
-    proto: RedLaser
-    fireCost: 62.5
-  - type: Battery
-    maxCharge: 500
-    startingCharge: 500
+    proto: RedOneOffLaser
+    fireCost: 200
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: -500
 
 - type: entity
   name: tesla gun

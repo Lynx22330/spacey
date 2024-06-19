@@ -13,4 +13,5 @@ health-analyzer-window-scan-mode-text = Scan Mode:
 health-analyzer-window-scan-mode-active = ACTIVE
 health-analyzer-window-scan-mode-inactive = INACTIVE
 
-health-analyzer-window-malnutrition = Severely malnourished
+health-analyzer-window-malnutrition = Severely Malnourished
+health-analyzer-window-dehydration = Severely Dehydrated

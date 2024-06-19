@@ -1,6 +1,6 @@
 ﻿- type: spaceBiome
   id: AsteroidsStandard
-  priority: 0 # This probably shouldn't get selected.
+  priority: 1 # This probably should get selected.
   noiseRanges: {}
   chunkComponents:
     - type: DebrisFeaturePlacerController

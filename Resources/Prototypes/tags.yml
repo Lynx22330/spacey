@@ -501,6 +501,9 @@
   id: DeathAcidifier
 
 - type: Tag
+  id: DecayedStation
+
+- type: Tag
   id: Debug
 
 - type: Tag
