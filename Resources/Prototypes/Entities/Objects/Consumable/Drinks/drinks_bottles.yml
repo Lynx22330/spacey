@@ -660,11 +660,12 @@
   components:
   - type: SolutionContainerManager
     solutions:
-      drink:
-        maxVol: 150
+      tonic:
+        maxVol: 15
         reagents:
-        - ReagentId: TonicWater
-          Quantity: 150
+        - ReagentId: TonicSolution
+          Quantity: 15
+
   - type: Label
     currentLabel: reagent-name-tonic-water
 

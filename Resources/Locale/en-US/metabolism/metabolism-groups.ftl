@@ -1,5 +1,6 @@
 metabolism-group-poison = Poison
 metabolism-group-medicine = Medicine
+metabolism-group-tonic = Tonic
 metabolism-group-narcotic = Narcotic
 metabolism-group-alcohol = Alcohol
 metabolism-group-food = Food

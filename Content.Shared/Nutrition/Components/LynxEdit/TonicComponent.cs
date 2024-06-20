@@ -1,11 +1,11 @@
 using Content.Shared.Alert;
 using Content.Shared.Damage;
-using Content.Shared.Nutrition.EntitySystems;
+using Content.Shared.Tonic.EntitySystems;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
-namespace Content.Shared.Nutrition.Components;
+namespace Content.Shared.Tonic.Components;
 
 [RegisterComponent, NetworkedComponent, Access(typeof(TonicSystem))]
 [AutoGenerateComponentState, AutoGenerateComponentPause]
@@ -20,6 +20,9 @@ public sealed partial class TonicComponent : Component
     [ViewVariables(VVAccess.ReadWrite)]
     [AutoNetworkedField]
     public float ActualDecayRate;
+
+    [DataField]
+    public string Solution = "tonic";
 
     [DataField, AutoNetworkedField, ViewVariables(VVAccess.ReadWrite)]
     public TonicThreshold CurrentTonicThreshold;

@@ -3,7 +3,7 @@ using Content.Shared.Damage;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Movement.Components;
 using Content.Shared.Movement.Systems;
-using Content.Shared.Nutrition.Components;
+using Content.Shared.Tonic.Components;
 using Content.Shared.Rejuvenate;
 using Content.Shared.StatusIcon;
 using JetBrains.Annotations;
@@ -12,7 +12,7 @@ using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 
-namespace Content.Shared.Nutrition.EntitySystems;
+namespace Content.Shared.Tonic.EntitySystems;
 
 [UsedImplicitly]
 public sealed class TonicSystem : EntitySystem
@@ -77,7 +77,7 @@ public sealed class TonicSystem : EntitySystem
         if (_jetpack.IsUserFlying(uid))
             return;
 
-        var mod = component.CurrentTonicThreshold <= TonicThreshold.Scarce ? 0.75f : 1.0f;
+        var mod = component.CurrentTonicThreshold <= TonicThreshold.Dead ? 0.5f : 1.2f;
         args.ModifySpeed(mod, mod);
     }
 
@@ -181,7 +181,7 @@ public sealed class TonicSystem : EntitySystem
 
             case TonicThreshold.Lush:
                 component.LastTonicThreshold = component.CurrentTonicThreshold;
-                component.ActualDecayRate = component.BaseDecayRate;
+                component.ActualDecayRate = component.BaseDecayRate * 1.6f;
                 return;
 
             case TonicThreshold.Normal:
@@ -208,8 +208,7 @@ public sealed class TonicSystem : EntitySystem
             return;
 
         if (component.CurrentTonicThreshold <= TonicThreshold.Dead &&
-            component.TonicDamage is { } damage &&
-            !_mobState.IsDead(uid))
+            component.TonicDamage is { } damage)
         {
             _damageable.TryChangeDamage(uid, damage, true, false);
         }

@@ -97,7 +97,7 @@ public sealed partial class HungerComponent : Component
     /// </summary>
     [DataField("starvingSlowdownModifier"), ViewVariables(VVAccess.ReadWrite)]
     [AutoNetworkedField]
-    public float StarvingSlowdownModifier = 0.75f;
+    public float StarvingSlowdownModifier = 0.6f;
 
     /// <summary>
     /// Damage dealt when your current threshold is at HungerThreshold.Dead

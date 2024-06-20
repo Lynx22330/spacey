@@ -11,6 +11,9 @@ Knowing different types of chemicals and their effects is important for being ab
 ## Medicine
 <GuideReagentGroupEmbed Group="Medicine"/>
 
+## Medicine
+<GuideReagentGroupEmbed Group="Tonic"/>
+
 ## Narcotics
 <GuideReagentGroupEmbed Group="Narcotics"/>
 

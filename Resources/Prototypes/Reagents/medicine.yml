@@ -654,6 +654,21 @@
           factor: 6
         - !type:ModifyBloodLevel
           amount: 6
+#I GUESS THIS GOES HERE THEN SINCE OTHER WAYS WONT WORK :)))))
+- type: reagent
+  id: TonicSolution
+  name: reagent-name-tonicsolution
+  group: Medicine
+  desc: reagent-desc-sonicsolution
+  flavor: sparkly
+  color: "#f100ff"
+  physicalDesc: reagent-physical-desc-quantized
+  slippery: false
+  metabolisms:
+      Drink:
+        effects:
+        - !type:SatiateTonic
+          factor: 1
 
 - type: reagent
   id: Siderlac
@@ -1148,7 +1163,7 @@
         conditions:
         - !type:ReagentThreshold
           min: 12
-          
+
 - type: reagent
   id: Opporozidone #Name based of an altered version of the startreck chem "Opporozine"
   name: reagent-name-opporozidone
