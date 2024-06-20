@@ -77,10 +77,6 @@
           type: Arachnid
           shouldHave: true
         amount: 0.4
-    Drink:
-      effects:
-      - !type:SatiateTonic
-        factor: 10
 
 - type: reagent
   id: Fluorine
