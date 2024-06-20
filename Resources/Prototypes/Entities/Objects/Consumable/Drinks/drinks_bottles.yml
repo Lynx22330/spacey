@@ -660,7 +660,7 @@
   components:
   - type: SolutionContainerManager
     solutions:
-      tonic:
+      drink:
         maxVol: 15
         reagents:
         - ReagentId: TonicSolution

@@ -668,7 +668,19 @@
       Medicine:
         effects:
         - !type:SatiateTonic
-          factor: 1
+          factor: 1.1
+        - !type:HealthChange
+          damage:
+            types:
+              Caustic: -0.7
+              Cellular: -0.7
+              Bloodloss: -0.7
+            groups:
+              Brute: -0.7
+              Burn: -0.7
+              Toxin: -0.7
+              Airloss: -0.7
+
 
 - type: reagent
   id: Siderlac

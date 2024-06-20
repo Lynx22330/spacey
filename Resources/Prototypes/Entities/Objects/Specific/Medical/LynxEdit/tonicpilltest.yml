@@ -1,18 +1,31 @@
 - type: entity
-  name: pill (quantum tonic 10u)
-  parent: Pill
-  id: PillTonicSolution
+  name: quantum tonic injector
+  parent: ChemicalMedipen
+  id: TonicInjector
+  description: Contains enough quantum tonic to last you a good while.
   components:
-  - type: Pill
-    pillType: 9
   - type: Sprite
-    state: pill10
-  - type: Label
-    currentLabel: quantum tonic 10u
+    sprite: Objects/Specific/Medical/medipen.rsi
+    layers:
+    - state: stimpen
+      map: ["enum.SolutionContainerLayers.Fill"]
   - type: SolutionContainerManager
     solutions:
-      tonic:
-        maxVol: 20
+      pen:
+        maxVol: 15
         reagents:
         - ReagentId: TonicSolution
-          Quantity: 10
+          Quantity: 15
+  - type: SolutionContainerVisuals
+    maxFillLevels: 1
+    changeColor: false
+    emptySpriteName: stimpen_empty
+  - type: Hypospray
+    solutionName: pen
+    transferAmount: 30
+    onlyAffectsMobs: false
+    injectOnly: true
+  - type: StaticPrice
+    price: 50000
+  - type: Tag
+    tags: []
