@@ -665,7 +665,7 @@
   physicalDesc: reagent-physical-desc-quantized
   slippery: false
   metabolisms:
-      Drink:
+      Medicine:
         effects:
         - !type:SatiateTonic
           factor: 1

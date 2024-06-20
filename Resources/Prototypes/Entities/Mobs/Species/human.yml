@@ -19,7 +19,7 @@
   - type: Tonic
     tonicDamage:
       types:
-        Heat: 0.1
+        Heat: 0.05
   - type: Butcherable
     butcheringType: Spike
     spawned:
