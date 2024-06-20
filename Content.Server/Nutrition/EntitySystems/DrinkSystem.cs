@@ -23,6 +23,8 @@ using Content.Shared.Mobs.Systems;
 using Content.Shared.Nutrition;
 using Content.Shared.Nutrition.Components;
 using Content.Shared.Nutrition.EntitySystems;
+using Content.Shared.Tonic.Components;
+using Content.Shared.Tonic.EntitySystems;
 using Content.Shared.Verbs;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
@@ -100,7 +102,37 @@ public sealed class DrinkSystem : SharedDrinkSystem
 
         return total;
     }
+    // Please work...!
+    public float TotalTonicization(EntityUid uid, TonicComponent? comp = null)
+    {
+        if (!Resolve(uid, ref comp))
+            return 0f;
 
+        if (!_solutionContainer.TryGetSolution(uid, comp.Solution, out _, out var solution))
+            return 0f;
+
+        var total = 0f;
+        foreach (var quantity in solution.Contents)
+        {
+            var reagent = _proto.Index<ReagentPrototype>(quantity.Reagent.Prototype);
+            if (reagent.Metabolisms == null)
+                continue;
+
+            foreach (var entry in reagent.Metabolisms.Values)
+            {
+                foreach (var effect in entry.Effects)
+                {
+                    // ignores any effect conditions, just cares about how much it can tonicize
+                    if (effect is SatiateTonic tonic)
+                    {
+                        total += tonic.TonicizeFactor * quantity.Quantity.Float();
+                    }
+                }
+            }
+        }
+
+        return total;
+    }
     private void AfterInteract(Entity<DrinkComponent> entity, ref AfterInteractEvent args)
     {
         if (args.Handled || args.Target == null || !args.CanReach)

@@ -28,3 +28,5 @@ reagent-desc-sodium-polyacrylate = A super-absorbent polymer with assorted indus
 reagent-name-cellulose = cellulose fibers
 reagent-desc-cellulose = A crystaline polydextrose polymer, plants swear by this stuff.
 
+reagent-name-tonicsolution = quantum tonic
+reagent-desc-tonicsolution = A special blend to keep your body from tearing apart.

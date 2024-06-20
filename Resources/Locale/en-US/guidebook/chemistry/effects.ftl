@@ -58,6 +58,15 @@ reagent-effect-guidebook-satiate-thirst =
         *[other] thirst at {NATURALFIXED($relative, 3)}x the average rate
     }
 
+reagent-effect-guidebook-satiate-tonic =
+    { $chance ->
+        [1] Satiates
+        *[other] satiate
+    } { $relative ->
+        [1] tonic averagely
+        *[other] tonicize at {NATURALFIXED($relative, 3)}x the average rate
+    }
+
 reagent-effect-guidebook-satiate-hunger =
     { $chance ->
         [1] Satiates

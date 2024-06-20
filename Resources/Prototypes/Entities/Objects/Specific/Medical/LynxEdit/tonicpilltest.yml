@@ -1,0 +1,18 @@
+- type: entity
+  name: pill (quantum tonic 10u)
+  parent: Pill
+  id: PillTonicSolution
+  components:
+  - type: Pill
+    pillType: 9
+  - type: Sprite
+    state: pill10
+  - type: Label
+    currentLabel: quantum tonic 10u
+  - type: SolutionContainerManager
+    solutions:
+      tonic:
+        maxVol: 20
+        reagents:
+        - ReagentId: TonicSolution
+          Quantity: 10

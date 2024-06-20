@@ -128,6 +128,10 @@
         - !type:ReagentThreshold
           min: 5
         probability: 0.1
+    Tonic:
+      effects:
+      - !type:SatiateTonic
+        factor: 10
 
 - type: reagent
   id: Fersilicite
