@@ -147,10 +147,10 @@
   - type: Appearance
 
 - type: entity
-  name: makeshift laser pistol
+  name: disposable laser pistol
   parent: [BaseWeaponBatterySmall, BaseGunWieldable]
-  id: WeaponMakeshiftLaser
-  description: Better pray it won't burn your hands off.
+  id: WeaponDisposableLaser
+  description: "WARNING: MUST HOLD DOWN TRIGGER WHEN DISCHARGING BATTERY, CANNOT BE RECHARGED."
   components:
   - type: Gun
     fireRate: 100
@@ -158,6 +158,29 @@
     availableModes:
     - Burst
     shotsPerBurst: 6
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Battery/disposable.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-unshaded-4
+      map: ["enum.GunVisualLayers.MagUnshaded"]
+      shader: unshaded
+  - type: Clothing
+    sprite: Objects/Weapons/Guns/Battery/disposable.rsi
+  - type: HitscanBatteryAmmoProvider
+    proto: RedOneOffLaser
+    fireCost: 200
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: -500
+
+- type: entity
+  name: makeshift laser pistol
+  parent: BaseWeaponBatterySmall
+  id: WeaponMakeshiftLaser
+  description: Better pray it won't burn your hands off.
+  components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Battery/makeshift.rsi
     layers:
@@ -169,11 +192,11 @@
   - type: Clothing
     sprite: Objects/Weapons/Guns/Battery/makeshift.rsi
   - type: HitscanBatteryAmmoProvider
-    proto: RedOneOffLaser
-    fireCost: 200
-  - type: BatterySelfRecharger
-    autoRecharge: true
-    autoRechargeRate: -500
+    proto: RedLaser
+    fireCost: 62.5
+  - type: Battery
+    maxCharge: 500
+    startingCharge: 500
 
 - type: entity
   name: tesla gun

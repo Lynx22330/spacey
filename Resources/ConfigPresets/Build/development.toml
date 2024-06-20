@@ -10,7 +10,7 @@ generator_enabled = false
 
 [physics]
 # Makes mapping annoying
-grid_splitting = true
+grid_splitting = false
 
 [procgen]
 preload = false

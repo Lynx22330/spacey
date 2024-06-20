@@ -5,6 +5,7 @@
   id: BaseAlertOrder
   order:
     - category: Health
+    - category: Tonic
     - category: Stamina
     - alertType: SuitPower
     - category: Internals
@@ -305,6 +306,33 @@
     state: peckish
   name: alerts-hunger-name
   description: alerts-hunger-desc
+
+- type: alert
+  id: Lush
+  category: Tonic
+  icons:
+  - sprite: /Textures/Interface/Alerts/tonics.rsi
+    state: lush
+  name: alerts-lushtonic-name
+  description: alerts-lushtonic-desc
+
+- type: alert
+  id: Normal
+  category: Tonic
+  icons:
+  - sprite: /Textures/Interface/Alerts/tonics.rsi
+    state: normal
+  name: alerts-normaltonic-name
+  description: alerts-normaltonic-desc
+
+- type: alert
+  id: Scarce
+  category: Tonic
+  icons:
+  - sprite: /Textures/Interface/Alerts/tonics.rsi
+    state: scarce
+  name: alerts-scarcetonic-name
+  description: alerts-scarcetonic-desc
 
 - type: alert
   id: Stamina
