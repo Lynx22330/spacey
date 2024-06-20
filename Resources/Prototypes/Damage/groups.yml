@@ -15,6 +15,12 @@
     - Cold
     - Caustic
 
+- type: damageGroup
+  id: Quantization
+  name: damage-group-quantization
+  damageTypes:
+    - Quantization
+
 # Airloss (sometimes called oxyloss)
 # Caused by asphyxiation or bloodloss.
 # Note that most medicine and damaging effects should probably modify either asphyxiation or

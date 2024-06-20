@@ -680,6 +680,7 @@
               Burn: -0.7
               Toxin: -0.7
               Airloss: -0.7
+              Quantization: -1
 
 
 - type: reagent

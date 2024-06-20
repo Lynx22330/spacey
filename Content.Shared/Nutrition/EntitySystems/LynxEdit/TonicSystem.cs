@@ -211,7 +211,10 @@ public sealed class TonicSystem : EntitySystem
             component.TonicDamage is { } damage)
         {
             _damageable.TryChangeDamage(uid, damage, true, false);
+            _damageable.SetDamageModifierSetId(uid, "TonicDead");
         }
+        else
+            _damageable.SetDamageModifierSetId(uid, "TonicAlive");
     }
 
     public override void Update(float frameTime)
