@@ -192,6 +192,7 @@
   - type: CreamPied
   - type: Stripping
   - type: Strippable
+  - type: Tonic
   - type: UserInterface
     interfaces:
       enum.VoiceMaskUIKey.Key:
