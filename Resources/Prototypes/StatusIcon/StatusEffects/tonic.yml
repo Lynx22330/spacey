@@ -1,0 +1,28 @@
+#Tonic
+- type: statusIcon
+  id: TonicIcon
+  abstract: true
+  priority: 5
+  locationPreference: Right
+  isShaded: true
+
+- type: statusIcon
+  id: TonicIconLush
+  parent: TonicIcon
+  icon:
+    sprite: /Textures/Interface/Misc/tonic_icons.rsi
+    state: lush
+
+- type: statusIcon
+  id: TonicIconNormal
+  parent: TonicIcon
+  icon:
+    sprite: /Textures/Interface/Misc/tonic_icons.rsi
+    state: normal
+
+- type: statusIcon
+  id: TonicIconScarce
+  parent: TonicIcon
+  icon:
+    sprite: /Textures/Interface/Misc/tonic_icons.rsi
+    state: scarce

@@ -63,6 +63,15 @@ alerts-piloting-desc = You are piloting a shuttle. Click the alert to stop.
 alerts-hunger-name = [color=yellow]Peckish[/color]
 alerts-hunger-desc = Some food would be good right about now.
 
+alerts-lushtonic-name = [color=green]Lush[/color]
+alerts-lushtonic-desc = You feel rather great!
+
+alerts-normaltonic-name = [color=yellow]Normal[/color]
+alerts-normaltonic-desc = Some tonic would help.
+
+alerts-scarcetonic-name = [color=red]Scarce[/color]
+alerts-scarcetonic-desc = Your muscles are weak, you can barely speak... You need tonic before it gets worse.
+
 alerts-stamina-name = Stamina
 alerts-stamina-desc = Stuns you if it is too low.
 
