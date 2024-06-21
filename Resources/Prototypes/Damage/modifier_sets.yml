@@ -205,31 +205,6 @@
     Poison: 0.0
     Radiation: 0.0
 
-- type: damageModifierSet
-  id: TonicDead #Incredible degredation to the body, can barely resist any attack.
-  coefficients:
-    Blunt: 1.33
-    Piercing: 1.33
-    Slash: 1.33
-    Cold: 1.33
-    Heat: 1.33
-    Poison: 1.33
-    Radiation: 1.33
-    Bloodloss: 1.33
-    Cellular: 1.33
-
-- type: damageModifierSet
-  id: TonicAlive #Incredible resilience to the body, can resist any attack.
-  coefficients:
-    Blunt: 0.9
-    Piercing: 0.9
-    Slash: 0.9
-    Cold: 0.9
-    Heat: 0.9
-    Poison: 0.9
-    Radiation: 0.9
-    Bloodloss: 0.9
-    Cellular: 0.9
 
 # immune to everything except physical and heat damage
 - type: damageModifierSet
@@ -275,7 +250,7 @@
     Bloodloss: 0.0 # no double dipping
     Cellular: 0.0
     Caustic: 0.0
-    Quantization: 0
+    Quantization: 0 #You lose blood in... A very different way.
 
 - type: damageModifierSet
   id: SlimePet # Very survivable slimes
@@ -323,3 +298,37 @@
     Cellular: 0.0
     Heat: 2.5
     Caustic: 0.0
+
+###############################
+#This is for Tonic Overriding.#
+###############################
+# I am too inexperienced to add or reduce these coefficients to existing ones... And I don't think the coefficients were programmed in that function.
+# If they were, please just call me a dumbass and tell me how to do it properly. Thanks in advance x3
+# AND besides, I think lore wise it'd simply work that each race was balanced equally in this fashion other than their typical abilities that each one gets.
+# Plus... It'd ruin the value of tonic if everyone had different defense stats..!
+
+- type: damageModifierSet
+  id: TonicDead #Incredible degredation to the body, can barely resist any attack. Default species value.
+  coefficients:
+    Blunt: 1.33
+    Piercing: 1.33
+    Slash: 1.33
+    Cold: 1.33
+    Heat: 1.33
+    Poison: 1.33
+    Radiation: 1.33
+    Bloodloss: 1.33
+    Cellular: 1.33
+
+- type: damageModifierSet
+  id: TonicAlive #Incredible resilience to the body, can resist any attack. Default species value.
+  coefficients:
+    Blunt: 0.9
+    Piercing: 0.9
+    Slash: 0.9
+    Cold: 0.9
+    Heat: 0.9
+    Poison: 0.9
+    Radiation: 0.9
+    Bloodloss: 0.9
+    Cellular: 0.9

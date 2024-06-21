@@ -77,7 +77,7 @@ public sealed class TonicSystem : EntitySystem
         if (_jetpack.IsUserFlying(uid))
             return;
 
-        var mod = component.CurrentTonicThreshold <= TonicThreshold.Dead ? 0.5f : 1.2f;
+        var mod = component.CurrentTonicThreshold <= TonicThreshold.Dead ? 0.6f : 1.0f;
         args.ModifySpeed(mod, mod);
     }
 
@@ -176,12 +176,12 @@ public sealed class TonicSystem : EntitySystem
         {
             case TonicThreshold.OverDosed:
                 component.LastTonicThreshold = component.CurrentTonicThreshold;
-                component.ActualDecayRate = component.BaseDecayRate * 2f;
+                component.ActualDecayRate = component.BaseDecayRate * 0.9f;
                 return;
 
             case TonicThreshold.Lush:
                 component.LastTonicThreshold = component.CurrentTonicThreshold;
-                component.ActualDecayRate = component.BaseDecayRate * 1.6f;
+                component.ActualDecayRate = component.BaseDecayRate * 1f;
                 return;
 
             case TonicThreshold.Normal:
@@ -191,7 +191,7 @@ public sealed class TonicSystem : EntitySystem
             case TonicThreshold.Scarce:
                 _movement.RefreshMovementSpeedModifiers(uid);
                 component.LastTonicThreshold = component.CurrentTonicThreshold;
-                component.ActualDecayRate = component.BaseDecayRate * 0.6f;
+                component.ActualDecayRate = component.BaseDecayRate * 2f;
                 return;
 
             case TonicThreshold.Dead:

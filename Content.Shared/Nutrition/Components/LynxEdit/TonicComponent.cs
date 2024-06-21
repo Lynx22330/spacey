@@ -45,7 +45,6 @@ public sealed partial class TonicComponent : Component
 
     /// <summary>
     /// Damage dealt when your current threshold is at TonicThreshold.Dead
-    /// (TEMPORARY, MUST REPLACE WITH A DEBUFF INSTEAD OF DAMAGE.)
     /// </summary>
     [DataField("tonicDamage")]
     public DamageSpecifier? TonicDamage;
