@@ -61,3 +61,12 @@
   - type: LightningTarget
     priority: 1
   - type: RequireProjectileTarget
+  - type: AmbientOnPowered
+  - type: AmbientSound
+    volume: 0
+    range: 2.25
+    enabled: false
+    sound:
+      path: /Audio/Ambience/Objects/Computers/computerdefaultaudio.ogg # Base Default noise for most computers. Just a simple hum.
+      params:
+        maxDistance: 3

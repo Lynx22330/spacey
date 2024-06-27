@@ -623,7 +623,7 @@
     sprite: Structures/Walls/reinforced_cap.rsi
     state: state0
   - type: IconSmooth
-    mode: NoSprite
+    mode: Diagonal
     key: walls
     base: state
   - type: Icon

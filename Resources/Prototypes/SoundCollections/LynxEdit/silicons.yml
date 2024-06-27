@@ -1,0 +1,13 @@
+- type: soundCollection
+  id: MedibotHeal
+  files:
+  - /Audio/Misc/LynxEdit/medibothealfinished1.ogg
+  - /Audio/Misc/LynxEdit/medibothealfinished2.ogg
+  - /Audio/Misc/LynxEdit/medibothealfinished3.ogg
+
+- type: soundCollection
+  id: CleanbotTweets
+  files:
+  - /Audio/Misc/LynxEdit/medibothealfinished1.ogg
+  - /Audio/Misc/LynxEdit/medibothealfinished2.ogg
+  - /Audio/Misc/LynxEdit/medibothealfinished3.ogg

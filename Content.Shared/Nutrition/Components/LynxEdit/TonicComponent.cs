@@ -60,7 +60,7 @@ public sealed partial class TonicComponent : Component
     [AutoNetworkedField]
     public Dictionary<TonicThreshold, float> TonicThresholds = new()
     {
-        {TonicThreshold.OverDosed, 150.0f},
+        {TonicThreshold.OverDosed, 200.0f},
         {TonicThreshold.Lush, 100.0f},
         {TonicThreshold.Normal, 75.0f},
         {TonicThreshold.Scarce, 50.0f},
@@ -76,7 +76,7 @@ public sealed partial class TonicComponent : Component
         {TonicThreshold.Lush, "Lush"},
         {TonicThreshold.Normal, "Normal"},
         {TonicThreshold.Scarce, "Scarce"},
-        {TonicThreshold.Dead, "Scarce"},
+        {TonicThreshold.Dead, "Dead"},
     };
 }
 

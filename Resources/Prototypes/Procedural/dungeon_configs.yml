@@ -360,6 +360,8 @@
       tile: FloorCaveDrought
       wall: WallRock
 
+
+# I should move this to another .yml but keeping it here for now.
 - type: dungeonConfig
   id: StationDecay
   generator: !type:PrefabDunGen
@@ -368,21 +370,28 @@
     - DecayedStation
     presets:
     - DecayedStationPreset
+  #postGeneration:
+  #  - !type:WormCorridorLynxEditPostGen #Works flawlessly for simulated destruction.
+  #    width: 2
+  #    length: 5
+  #    count: 10
+  #    tile: Space
+  #                     Lets keep this removed for now and focus on just making abandoned stations.
+  #
+  #  - !type:CorridorClutterPostGen
+  #    chance: 0.8
+  #    contents:
+  #    - id: ImmovableRodLynxEditDespawn
+  #      prob: 0.8
   postGeneration:
-    - !type:WormCorridorLynxEditPostGen #Works flawlessly for simulated destruction.
-      width: 1
-      length: 5
-      count: 2
-      tile: Lattice
-
-    - !type:CorridorClutterPostGen
-      chance: 0.8
-      contents:
-      - id: ImmovableRodLynxEditDespawn
-        prob: 0.8
-      - id: GrilleSpawner
-        prob: 0.2
+    - !type:CorridorPostGen # lets try this and see how it works
+      width: 3
 
     - !type:BoundaryWallPostGen
-      tile: Space  #Keeping this for debugging currently. FloorCaveDrought
-      wall: WallInvisible
+      tile: Lattice  #Keeping this for debugging currently. FloorCaveDrought
+      wall: WallSolid
+
+    - !type:RoomEntrancePostGen
+      entities:
+        - CableApcExtension
+        - AirlockFreezerHydroponicsLocked # Experimenting

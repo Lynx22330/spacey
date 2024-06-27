@@ -89,7 +89,7 @@ public sealed class TonicSystem : EntitySystem
     private TonicThreshold GetTonicThreshold(TonicComponent component, float amount)
     {
         TonicThreshold result = TonicThreshold.Dead;
-        var value = component.TonicThresholds[TonicThreshold.Lush];
+        var value = component.TonicThresholds[TonicThreshold.OverDosed];
         foreach (var threshold in component.TonicThresholds)
         {
             if (threshold.Value <= value && threshold.Value >= amount)
@@ -111,7 +111,7 @@ public sealed class TonicSystem : EntitySystem
     {
         component.CurrentTonicLevels = Math.Clamp(amount,
             component.TonicThresholds[TonicThreshold.Dead],
-            component.TonicThresholds[TonicThreshold.Lush]
+            component.TonicThresholds[TonicThreshold.OverDosed]
         );
         Dirty(uid, component);
     }
@@ -176,7 +176,7 @@ public sealed class TonicSystem : EntitySystem
         {
             case TonicThreshold.OverDosed:
                 component.LastTonicThreshold = component.CurrentTonicThreshold;
-                component.ActualDecayRate = component.BaseDecayRate * 0.9f;
+                component.ActualDecayRate = component.BaseDecayRate * 10f; // Very high decay, it's bad to overdose as it'll essentially do nothing more than a normal dosage. Balance reasons.
                 return;
 
             case TonicThreshold.Lush:
@@ -186,12 +186,12 @@ public sealed class TonicSystem : EntitySystem
 
             case TonicThreshold.Normal:
                 component.LastTonicThreshold = component.CurrentTonicThreshold;
-                component.ActualDecayRate = component.BaseDecayRate * 1.2f;
+                component.ActualDecayRate = component.BaseDecayRate * 0.8f;
                 return;
             case TonicThreshold.Scarce:
                 _movement.RefreshMovementSpeedModifiers(uid);
                 component.LastTonicThreshold = component.CurrentTonicThreshold;
-                component.ActualDecayRate = component.BaseDecayRate * 2f;
+                component.ActualDecayRate = component.BaseDecayRate * 0.6f;
                 return;
 
             case TonicThreshold.Dead:

@@ -11,7 +11,7 @@ namespace Content.Server.Chemistry.ReagentEffects
     /// </summary>
     public sealed partial class SatiateTonic : ReagentEffect
     {
-        private const float DefaultTonicFactor = 3.0f;
+        private const float DefaultTonicFactor = 1.0f;
 
         /// How much tonic is satiated each metabolism tick. Not currently tied to
         /// rate or anything.

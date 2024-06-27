@@ -1,11 +1,13 @@
 {
     "version": 1,
     "license": "CC-BY-SA-3.0",
-    "copyright": "lush.png, normal.png and scarce.png created by Scuhf_",
+    "copyright": "lush.png, normal.png and scarce.png created by Scuhf_, overdosed.png, scarce.png, and dead.png are modified edits done by L_ynx",
     "size": { "x": 66, "y": 32 },
     "states": [
+        { "name": "overdosed", "directions": 1, "delays": [[1.0]] },
         { "name": "lush", "directions": 1, "delays": [[1.0]] },
         { "name": "normal", "directions": 1, "delays": [[1.0]] },
-        { "name": "scarce", "directions": 1, "delays": [[1.0]] }
+        { "name": "scarce", "directions": 1, "delays": [[1.0]] },
+        { "name": "dead", "directions": 1, "delays": [[1.0]] }
     ]
 }

@@ -8,6 +8,7 @@ using Content.Shared.Mobs.Components;
 using Content.Shared.Popups;
 using Content.Shared.Silicons.Bots;
 using Robust.Shared.Audio.Systems;
+using Robust.Shared.Player;
 
 namespace Content.Server.NPC.HTN.PrimitiveTasks.Operators.Specific;
 
@@ -82,6 +83,7 @@ public sealed partial class MedibotInjectOperator : HTNOperator
         _solutionContainer.TryAddReagent(injectable.Value, treatment.Reagent, treatment.Quantity, out _);
         _popup.PopupEntity(Loc.GetString("hypospray-component-feel-prick-message"), target, target);
         _audio.PlayPvs(botComp.InjectSound, target);
+        _audio.PlayEntity(botComp.FinishedSound, Filter.Local(), owner, false); // tweet tweet tweet! or something
         _chat.TrySendInGameICMessage(owner, Loc.GetString("medibot-finish-inject"), InGameICChatType.Speak, hideChat: true, hideLog: true);
         return HTNOperatorStatus.Finished;
     }

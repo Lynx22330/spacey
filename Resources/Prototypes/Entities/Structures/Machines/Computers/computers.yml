@@ -560,6 +560,15 @@
   name: communications computer
   description: A computer used to make station wide announcements via keyboard, set the appropriate alert level, and call the emergency shuttle.
   components:
+  - type: AmbientOnPowered
+  - type: AmbientSound
+    volume: -15
+    range: 2.25
+    enabled: false
+    sound:
+      path: /Audio/Ambience/Objects/Computers/comms_ambient_noise.ogg
+      params:
+        maxDistance: 3
   - type: Sprite
     layers:
     - map: ["computerLayerBody"]

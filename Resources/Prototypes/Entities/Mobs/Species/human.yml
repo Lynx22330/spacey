@@ -5,21 +5,9 @@
   name: Urist McHands
   abstract: true
   components:
-  - type: Hunger
-    starvationDamage:
-      types:
-        Cold: 0.15
   - type: Icon # It will not have an icon in the adminspawn menu without this. Body parts seem fine for whatever reason.
     sprite: Mobs/Species/Human/parts.rsi
     state: full
-  - type: Thirst
-    thirstDamage:
-      types:
-        Bloodloss: 0.3
-  - type: Tonic
-    tonicDamage:
-      types:
-        Quantization: 0.05
   - type: Butcherable
     butcheringType: Spike
     spawned:

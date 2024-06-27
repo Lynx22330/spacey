@@ -655,11 +655,12 @@
         - !type:ModifyBloodLevel
           amount: 6
 #I GUESS THIS GOES HERE THEN SINCE OTHER WAYS WONT WORK :)))))
+#Default solution to act as a base.
 - type: reagent
-  id: TonicSolution
+  id: DefaultTonicSolution
   name: reagent-name-tonicsolution
   group: Medicine
-  desc: reagent-desc-sonicsolution
+  desc: reagent-desc-tonicsolution
   flavor: sparkly
   color: "#f100ff"
   physicalDesc: reagent-physical-desc-quantized
@@ -668,7 +669,7 @@
       Medicine:
         effects:
         - !type:SatiateTonic
-          factor: 1.1
+          factor: 1
         - !type:HealthChange
           damage:
             types:
@@ -682,6 +683,86 @@
               Airloss: -0.7
               Quantization: -1
 
+- type: reagent
+  id: DirtyTonicSolution
+  name: reagent-name-tonicsolution
+  group: Medicine
+  desc: reagent-desc-tonicsolution
+  flavor: sparkly
+  color: "#f100ff"
+  physicalDesc: reagent-physical-desc-quantized
+  slippery: false
+  metabolisms:
+      Medicine:
+        effects:
+        - !type:SatiateTonic
+          factor: 1
+        - !type:HealthChange
+          damage:
+            types:
+              Caustic: -0.2
+              Cellular: -0.2
+              Bloodloss: -0.2
+            groups:
+              Brute: -0.2
+              Burn: -0.2
+              Toxin: -0.2
+              Airloss: -0.2
+              Quantization: -1
+
+- type: reagent
+  id: FilteredTonicSolution
+  name: reagent-name-tonicsolution
+  group: Medicine
+  desc: reagent-desc-tonicsolution
+  flavor: sparkly
+  color: "#f100ff"
+  physicalDesc: reagent-physical-desc-quantized
+  slippery: false
+  metabolisms:
+      Medicine:
+        effects:
+        - !type:SatiateTonic
+          factor: 2
+        - !type:HealthChange
+          damage:
+            types:
+              Caustic: -0.4
+              Cellular: -0.4
+              Bloodloss: -0.4
+            groups:
+              Brute: -0.4
+              Burn: -0.4
+              Toxin: -0.4
+              Airloss: -0.4
+              Quantization: -1
+
+- type: reagent
+  id: PureTonicSolution
+  name: reagent-name-tonicsolution
+  group: Medicine
+  desc: reagent-desc-tonicsolution
+  flavor: sparkly
+  color: "#f100ff"
+  physicalDesc: reagent-physical-desc-quantized
+  slippery: false
+  metabolisms:
+      Medicine:
+        effects:
+        - !type:SatiateTonic
+          factor: 3
+        - !type:HealthChange
+          damage:
+            types:
+              Caustic: -0.9
+              Cellular: -0.9
+              Bloodloss: -0.9
+            groups:
+              Brute: -0.9
+              Burn: -0.9
+              Toxin: -0.9
+              Airloss: -0.9
+              Quantization: -1
 
 - type: reagent
   id: Siderlac

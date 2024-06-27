@@ -504,6 +504,47 @@
   - type: SpaceGarbage
   - type: StaticPrice
     price: 0
+  - type: UseDelay #yay funny trash noises!
+    delay: 0.8
+  - type: Slippery
+    paralyzeTime: 0
+    slipSound:
+      collection: trashBagRustle
+      params:
+        volume: -200
+        variation: 0.125
+  - type: StepTrigger
+    intersectRatio: 0.2
+    requiredTriggeredSpeed: 1
+  - type: TriggerOnStepTrigger
+  - type: EmitSoundOnTrigger
+    sound:
+      collection: trashBagRustle
+      params:
+        volume: -15
+        variation: 0.125
+        maxDistance: 5
+  - type: Appearance
+  - type: CollisionWake
+    enabled: false
+  - type: Physics
+    bodyType: Dynamic
+  - type: Fixtures
+    fixtures:
+      slips:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        hard: false
+        layer:
+        - SlipLayer
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        density: 30
+        mask:
+        - ItemMask
 
 - type: entity
   noSpawn: true

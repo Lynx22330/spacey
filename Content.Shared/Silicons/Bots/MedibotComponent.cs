@@ -25,6 +25,9 @@ public sealed partial class MedibotComponent : Component
     /// </summary>
     [DataField("injectSound")]
     public SoundSpecifier InjectSound = new SoundPathSpecifier("/Audio/Items/hypospray.ogg");
+
+    [DataField("finishedSound")]
+    public SoundSpecifier FinishedSound = new SoundCollectionSpecifier("MedibotHeal");
 }
 
 /// <summary>

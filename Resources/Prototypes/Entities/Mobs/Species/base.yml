@@ -74,6 +74,8 @@
         color: "#FF0000"
       Burn:
         sprite: Mobs/Effects/burn_damage.rsi
+#      Quantization:
+#        sprite: Mobs/Effects/LynxEdit/quantization_damage.rsi  // Almost ready!
   - type: GenericVisualizer
     visuals:
       enum.CreamPiedVisuals.Creamed:
@@ -192,7 +194,6 @@
   - type: CreamPied
   - type: Stripping
   - type: Strippable
-  - type: Tonic
   - type: UserInterface
     interfaces:
       enum.VoiceMaskUIKey.Key:
@@ -250,6 +251,18 @@
         Heat: -0.07
       groups:
         Brute: -0.07
+  - type: Hunger
+    starvationDamage:
+      types:
+        Cold: 0.15
+  - type: Thirst
+    thirstDamage:
+      types:
+        Bloodloss: 0.3
+  - type: Tonic
+    tonicDamage:
+      types:
+        Quantization: 0.05
 
   - type: Blindable
   # Other

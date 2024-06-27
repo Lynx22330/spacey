@@ -1,0 +1,88 @@
+- type: entity
+  id: MushroomBaseMine
+  abstract: true
+  components:
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Anchorable
+  - type: Physics
+    bodyType: Static
+    fixedRotation: true
+  - type: Fixtures
+    fixtures:
+      slips:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.2,-0.2,0.2,0.2"
+        hard: false
+        layer:
+          - LowImpassable
+  - type: Sprite
+    drawdepth: Items
+    sprite: Objects/Specific/Hydroponics/fly_amanita.rsi
+    state: produce
+  - type: Damageable
+    damageContainer: Biological
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:TriggerBehavior
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: StepTrigger
+    intersectRatio: 0.2
+    requiredTriggeredSpeed: 1
+  - type: LandMine
+    sound:
+        path: /Audio/Effects/beep_landmine.ogg
+        params:
+            maxDistance: 10
+  - type: SmokeOnTrigger
+    smokePrototype: Smoke
+    duration: 30
+    spreadAmount: 0
+
+
+- type: entity
+  name: mushroom mine
+  parent: MushroomBaseMine
+  id: LandMineMushroom
+  components:
+  - type: DeleteOnTrigger
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFoam
+  id: MushroomFoam
+  name: foam
+  noSpawn: true
+  components:
+  - type: Sprite
+    color: "#ffffffcc"
+    sprite: Effects/foam.rsi
+    layers:
+    - state: foam
+      map: ["enum.FoamVisualLayers.Base"]
+    - map: [ "enum.EdgeLayer.South" ]
+      state: foam-south
+    - map: [ "enum.EdgeLayer.East" ]
+      state: foam-east
+    - map: [ "enum.EdgeLayer.North" ]
+      state: foam-north
+    - map: [ "enum.EdgeLayer.West" ]
+      state: foam-west
+  - type: SmoothEdge
+  - type: IconSmooth
+    key: walls
+    mode: NoSprite
+  - type: FoamVisuals
+    animationTime: 0.6
+    animationState: foam-dissolve
+  - type: StepTrigger
+  # disabled until foam reagent duplication is fixed
+  #- type: ScoopableSolution
+  #  solution: solutionArea

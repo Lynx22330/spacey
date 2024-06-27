@@ -663,7 +663,7 @@
       drink:
         maxVol: 15
         reagents:
-        - ReagentId: TonicSolution
+        - ReagentId: TonicWater
           Quantity: 15
 
   - type: Label

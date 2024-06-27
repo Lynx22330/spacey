@@ -14,7 +14,7 @@
       pen:
         maxVol: 15
         reagents:
-        - ReagentId: TonicSolution
+        - ReagentId: PureTonicSolution
           Quantity: 15
   - type: SolutionContainerVisuals
     maxFillLevels: 1
